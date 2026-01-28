@@ -1,73 +1,62 @@
-# React + TypeScript + Vite
+# guns.lol like site
+Minimal snowy landing page / profile card inspired by guns.lol, built with React + Vite + Tailwind
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# ❄️ Snowy Profile Card
 
-Currently, two official plugins are available:
+A minimal, aesthetic landing page and profile card inspired by guns.lol. Built for speed and simplicity.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
+* **Two-Screen Flow:** Seamless transition from a welcome splash to your profile card.
+* **Click-to-Enter:** Minimalist UX—no clunky buttons required.
+* **Animated Snowfall:** Lightweight, gentle snow effect for a clean winter aesthetic.
+* **Fully Responsive:** Looks great on desktop and mobile.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
+* **React** + **Vite** (Lightning fast builds)
+* **Tailwind CSS** (Easy styling)
+* **HTML5 Canvas** (Smooth snow animations)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. **Install dependencies:**
+   ```bash
+   npm install
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+2. **Start the dev server:**
+   ```bash
+   npm run dev
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3. **Build for production:**
+   ```bash
+   npm run build
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ Customization Guide
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Most of the personal configuration happens in `src/App.tsx` and `src/SnowCanvas.tsx`.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 🪪 Profile Card Info (`src/App.tsx`)
+* **Name & Subtitle:** Locate the `[Your Name]` heading and the small text below it to update your identity and tagline.
+* **Email & Role:** * Update the `mailto:you@example.com` link and the visible email text.
+    * Replace `[Your City]` and the role text (e.g., "Frontend Developer") with your own details.
+* **Social Links:** In the "Links" section, update the `href` values with your URLs (GitHub, LinkedIn, etc.) and edit the display text to show your handle. You can copy/paste these blocks to add more links.
+
+### 🖥️ Welcome Screen (`src/App.tsx`)
+* **Welcome Text:** Change the large "Welcome" text to anything you'd like users to see first. 
+* **Interaction:** The entire screen is interactive; clicking anywhere triggers the transition to your profile card.
+
+### ❄️ Snow Physics (`src/SnowCanvas.tsx`)
+Fine-tune the atmosphere by adjusting these variables:
+* **`FLAKE_COUNT`**: Increase or decrease the number of snowflakes.
+* **`speedY`**: Adjust how fast the snow falls.
+* **`driftX`**: Adjust the horizontal "wind" effect.
+
+## 🚀 Deployment
+
+You can deploy this with **Vercel**, **Netlify**, or **GitHub Pages**.
+
+* **Build command:** `npm run build`
+* **Output directory:** `dist`
